@@ -9,6 +9,7 @@ This skill automates:
 - Creating a Python 3.12 Conda env and installing `qwen-tts` (0.6B/1.7B CustomVoice)
 - Generating 9 speaker samples in English (or chosen language)
 - Rendering a vertical 1080×1920 Remotion video that plays each sample with a title card
+- Optional: Creating one‑off voice replies from any text using Qwen3‑TTS and returning a local WAV path
 
 ## Prereqs
 - macOS with Homebrew
@@ -32,6 +33,16 @@ bash scripts/render-remotion.sh
 # - Audio: clawd/tmp/qwen_samples/*_EN.wav
 # - Video: projects/qwen3-tts-demo/out/QwenDemo.mp4
 ```
+
+## Voice replies (send any text as a voice message)
+Generate a single WAV from arbitrary text and chosen speaker:
+
+```bash
+TEXT="Your message here" SPEAKER=Ryan LANG=English bash scripts/voice-reply.sh
+# -> prints /Users/yusuf/clawd/tmp/qwen_voice/voice-<ts>.wav
+```
+
+This path can be sent directly in chat systems that accept file uploads.
 
 ## Customization
 - Change the text: `TEXT="Your line here" bash scripts/generate-audio.sh`
