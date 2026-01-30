@@ -42,6 +42,16 @@ TEXT="Your message here" SPEAKER=Ryan LANG=English bash scripts/voice-reply.sh
 # -> prints /Users/yusuf/clawd/tmp/qwen_voice/voice-<ts>.wav
 ```
 
+Toggle auto-voice replies for agents/tools that consult the flag:
+```bash
+bash scripts/enable-voice-replies.sh   # turn ON (use TTS by default)
+bash scripts/disable-voice-replies.sh  # turn OFF (send text)
+```
+Wrapper that respects the toggle:
+```bash
+bash scripts/reply-or-voice.sh "Your message" Ryan English
+```
+
 This path can be sent directly in chat systems that accept file uploads.
 
 ## Customization
